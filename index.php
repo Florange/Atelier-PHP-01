@@ -10,11 +10,11 @@ $action = ( isset ($_GET ['action'] ) ) ? $_GET ['action'] : '';
 
 include SITE_PATH . '/includes/Db.php';
 
-include SITE_PATH . '/application/' . $page . '/' . $page . '.php';
+include SITE_PATH . '/application/' . $page . '/Controller.php';
 
+$Controller = new Controller ( $page, $action );
 
-
-
+$datas = $Controller->get_datas();
 
 
 include SITE_PATH . '/view/page.php';
